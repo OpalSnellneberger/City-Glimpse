@@ -3,7 +3,11 @@ const sequelize = require('../config/connection');
 
 class Comment extends Model {}
 
-Review.init(
+
+Comment.init(
+
+
+
   {
     id: {
       type: DataTypes.INTEGER,
@@ -32,6 +36,7 @@ Review.init(
         key: 'id',
       },
     },
+
   },
   {
     sequelize,
@@ -41,4 +46,6 @@ Review.init(
   }
 );
 
+
 module.exports = Comment;
+

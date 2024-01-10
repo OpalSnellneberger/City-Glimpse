@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet</title>
+
+    <!-- leaflet css -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="map"></div>
+</body>
+
+</html>
+
+
+
+
+<!-- leaflet javascript -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+
+<script>
+    // <!-- map initialization -->
+    var map = L.map('map').setView([39.9526, -75.165222], 13);
+
+    // osm layer
+    var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    });
+    osm.addTo(map);
+
+    // other tileLayer choices: https://leaflet-extras.github.io/leaflet-providers/preview/
+
+
+    // popup marker
+    var singleMarker = L.marker([39.953395, -75.159008], { draggable: true }).addTo(map)
+        .bindPopup('Reading Terminal Market')
+        .openPopup();
+    singleMarker.addTo(map);
+    // Coordinates values are rounded with formatNum function with given precision. Returns a GeoJSON representation of the marker (as a GeoJSON Point Feature).
+    console.log(singleMarker.toGeoJSON());
+
+    // make unique map icons
+    // var myIcon = L.icon({
+    //     iconUrl: 'my-icon.png',
+    //     iconSize: [38, 95],
+    //     iconAnchor: [22, 94],
+    //     popupAnchor: [-3, -76],
+    //     shadowUrl: 'my-icon-shadow.png',
+    //     shadowSize: [68, 95],
+    //     shadowAnchor: [22, 94]
+    // });
+
+    // L.marker([50.505, 30.57], { icon: myIcon }).addTo(map);
+
+    // google street view tileLayer
+    var googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    });
+    googleStreets.addTo(map);
+
+    // methods to possibly use
+    // getLatLng()    Returns the current geographical position of the marker.
+    // setLatLng(<LatLng> latlng)    Changes the marker position to the given point.
+
+    // add maptiler geocoding - search the map: https://youtu.be/Js86_o07KlA?si=YelHyDQQJBVmb4nj
+
+</script>
