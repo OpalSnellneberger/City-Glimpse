@@ -19,6 +19,14 @@ Restaurant.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    longitude: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    latitude: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     type: {
       type: DataTypes.STRING,
       allowNull: false,
