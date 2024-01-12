@@ -12,7 +12,7 @@
   "scripts": {
     "start": "node server.js",
     "watch": "nodemon server.js",
-    "seed": "node seeds/index.js"
+    "seed": "node seeds/seed.js"
   },
   "name": "city-glimpse",
   "description": "",
