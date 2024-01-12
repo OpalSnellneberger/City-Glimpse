@@ -1,7 +1,27 @@
 [
   {
-    "title": "Great food",
-    "content": "the food was great",
+    "title": "Great Experience at City Tavern",
+    "content": "Visited City Tavern and loved the historic ambiance. The food was delicious, and the staff was friendly.",
     "rating": 5
+  },
+  {
+    "title": "Diverse Food Options at Reading Terminal Market",
+    "content": "Reading Terminal Market is a foodie's paradise! So many diverse food options under one roof. Must-visit for any food lover.",
+    "rating": 4
+  },
+  {
+    "title": "Amazing Vegan Options at Vedge",
+    "content": "Vedge exceeded my expectations for a vegetarian restaurant. The flavors were outstanding, and the presentation was impressive.",
+    "rating": 5
+  },
+  {
+    "title": "Classic Cheesesteaks at Pat's King of Steaks",
+    "content": "Pat's King of Steaks is the go-to place for classic Philly cheesesteaks. The rolls were fresh, and the steak was perfectly seasoned.",
+    "rating": 4.5
+  },
+  {
+    "title": "Delicious Israeli Cuisine at Zahav",
+    "content": "Zahav offers a unique and delightful experience with its Israeli cuisine. The hummus and lamb dishes were exceptional.",
+    "rating": 4.5
   }
 ]
