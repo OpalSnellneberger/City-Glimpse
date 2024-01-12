@@ -1,44 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Glimpse</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Link to Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="../public/css/style.css">
+    <!-- Your custom styles go here -->
+    <script src="https://kit.fontawesome.com/ec9a7f8813.js" crossorigin="anonymous">
+    </script>
+
 </head>
-
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
+
+    <header>
+
+        <nav>
+            <h1>City Glimpse</h1>
+            <a role="button" class="fa-solid fa-burger" aria-label="menu" aria-expanded="false">
+              <!-- <span aria-hidden="true">Sign Up</span>
+              <span aria-hidden="true">Login</span>
+              <span aria-hidden="true"></span> -->
+            </a>
+        </nav>
+
     </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+    <div id="map"></div>
+
+    <div id="comments">
+        <h2>Comments Section</h2>
+        <!-- Add your comment section content here -->
+        <p>Sample comment 1</p>
+        <p>Sample comment 2</p>
+        <!-- You can use JavaScript to dynamically load comments from a server -->
+    </div>
+
+    <!-- Link to Leaflet JavaScript -->
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Your custom scripts go here, including Leaflet map initialization -->
+    <script>
+
+        // Sample Leaflet map initialization
+        var map = L.map('map').setView([51.505, -0.09], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+    </script>
+
+
 </body>
-
 </html>
