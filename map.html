@@ -41,40 +41,94 @@
 <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
 <script>
+
+  // Initialize the map
+  var map = L.map('map').setView([39.9526, -75.165222], 13);
+  // Add a tile layer (you can use your preferred tile layer)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+  // Add the geocoder control
+  const geocoder = L.Control.geocoder({
+    defaultMarkGeocode: false, // Prevent automatic marker placement on geocoded address
+  }).on('markgeocode', function (e) {
+    // Extract the geocoded information
+    const { center, name, properties } = e.geocode;
+    // Create a marker and add it to the map
+    const marker = L.marker(center).addTo(map);
+    // Bind a popup with the geocoded address information to the marker
+    marker.bindPopup(`<b>${name.split(",")[0]}</b><br><div class="field">
+  <label class="label">Type of Restaurant</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="e.g Italian">
+  </div>
+</div>
+
+<div class="field">
+    <textarea class="textarea" placeholder="e.g. Hello world"></textarea>
+  <label class="label">Comment</label>
+  <div class="control">
+    <input class="input" type="Comment" placeholder="e.g. alexsmith@gmail.com">
+  </div>
+</div><button>Save</button>`).openPopup();
+    // Execute your function with the geocoded information
+    generateMapSearch(center, name, properties);
+  }).addTo(map);
+  // Function to run when an address is geocoded
+  function generateMapSearch(center, name, properties) {
+    // Your logic here
+    console.log('Geocoded Address:', name);
+    console.log('Coordinates:', center);
+    console.log('Properties:', properties);
+    // pull up the form
+    // add the save button
+  };
+
+    // google street view tileLayer
+    var googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    });
+    googleStreets.addTo(map);
+
+
+
+
+
     // <!-- map initialization -->
-    var map = L.map('map').setView([39.9526, -75.165222], 13);
+    // var map = L.map('map').setView([39.9526, -75.165222], 13);
 
     // osm layer
-    var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    });
-    osm.addTo(map);
+    // var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    // });
+    // osm.addTo(map);
 
     // other tileLayer choices: https://leaflet-extras.github.io/leaflet-providers/preview/
 
 
     // popup marker
-    var singleMarker = L.marker([39.953395, -75.159008], { draggable: true });
-    var popup = singleMarker.bindPopup('Reading Terminal Market ' + singleMarker.getLatLng()).openPopup();
-    popup.addTo(map);
-    // Coordinates values are rounded with formatNum function with given precision. Returns a GeoJSON representation of the marker (as a GeoJSON Point Feature).
-    console.log(singleMarker.toGeoJSON());
+    // var singleMarker = L.marker([39.953395, -75.159008], { draggable: true });
+    // var popup = singleMarker.bindPopup('Reading Terminal Market ' + singleMarker.getLatLng()).openPopup();
+    // popup.addTo(map);
+    // // Coordinates values are rounded with formatNum function with given precision. Returns a GeoJSON representation of the marker (as a GeoJSON Point Feature).
+    // console.log(singleMarker.toGeoJSON());
 
     // onclick marker
-    map.on("click", function(e) {
-        var marker = new L.marker([e.latlng.lat, e.latlng.lng]).addTo(map).on('click', e=> e.target.remove());
-    });
+    // map.on("click", function(e) {
+    //     var marker = new L.marker([e.latlng.lat, e.latlng.lng]).addTo(map).on('click', e=> e.target.remove());
+    // });
 
     // click on the marker and show the information
     // need to link to the restaurant table/form data
-    L.geoJSON(FormData, {
-        onEachFeature: function(feature, layer) {
-            layer.bindPopup(feature.properties.name);
-            layer.on('mouseover', function(e) {
-                this.openPopup();
-            });
-        }
-    }).addTo(map);
+    // L.geoJSON(FormData, {
+    //     onEachFeature: function(feature, layer) {
+    //         layer.bindPopup(feature.properties.name);
+    //         layer.on('mouseover', function(e) {
+    //             this.openPopup();
+    //         });
+    //     }
+    // }).addTo(map);
 
     // make unique map icons
     // var myIcon = L.icon({
@@ -90,14 +144,29 @@
     // L.marker([50.505, 30.57], { icon: myIcon }).addTo(map);
 
     // google street view tileLayer
-    var googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
-        maxZoom: 20,
-        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-    });
-    googleStreets.addTo(map);
+    // var googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
+    //     maxZoom: 20,
+    //     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    // });
+    // googleStreets.addTo(map);
 
-    // search bar
-    L.Control.geocoder().addTo(map);
+//     L.Control.geocoder({
+//     defaultMarkGeocode: false, // Prevent automatic marker placement on geocoded address
+//   }).on('markgeocode', function (e) {
+//     // Extract the geocoded information
+//     const { center, name, properties } = e.geocode;
+//     console.log(e.geocode);
+//   })
+
+    // var tempL = L.Control.geocoder()
+    // try {
+    //     console.log(tempL._geocodeMarker._popup._content);
+    // } catch (e) {
+    //     console.log(e);
+    // };
+    // // search bar
+    // tempL.addTo(map); 
+    // console.log(address);
 
     // methods to possibly use
     // getLatLng()    Returns the current geographical position of the marker.
@@ -120,7 +189,6 @@
     //                 return new L.Control.Watermark(opts);
     //                 }
     //             L.control.watermark({position:'bottomleft'}).addTo(map);
-
 
 
 </script>
