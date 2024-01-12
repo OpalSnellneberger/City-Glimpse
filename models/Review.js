@@ -20,7 +20,7 @@ Review.init(
       allowNull: false,
     },
     rating: {
-      type: DaDataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     user_id: {
