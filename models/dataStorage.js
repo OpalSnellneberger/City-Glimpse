@@ -10,6 +10,8 @@ const connection = mysql.createConnection({
   
 connection.connect();
 
+
+// TODO: This should actually match the DB for Resteraunts and should have another for comments
 function storeData(dataToStore, callback) {
   const sql = 'INSERT INTO data (field1, field2) VALUES (?, ?)';
   const values = [dataToStore.field1, dataToStore.field2];
