@@ -7,12 +7,15 @@
     <title>Leaflet</title>
 
     <!-- leaflet css -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-
+ -->
 
     <style>
+        h2 {
+            color: rgb(69, 69, 202);
+        };
         body {
             margin: 0;
             padding: 0;
@@ -57,20 +60,16 @@
     // Create a marker and add it to the map
     const marker = L.marker(center).addTo(map);
     // Bind a popup with the geocoded address information to the marker
-    marker.bindPopup(`<b>${name.split(",")[0]}</b><br><div class="field">
-  <label class="label">Type of Restaurant</label>
+    marker.bindPopup(`<h2><b>${name.split(",")[0]}</b></h2><br><div class="field">
+  <label class="label">Type of Restaurant</label><br>
   <div class="control">
     <input class="input" type="text" placeholder="e.g Italian">
   </div>
 </div>
-
-<div class="field">
-    <textarea class="textarea" placeholder="e.g. Hello world"></textarea>
-  <label class="label">Comment</label>
-  <div class="control">
-    <input class="input" type="Comment" placeholder="e.g. alexsmith@gmail.com">
-  </div>
-</div><button>Save</button>`).openPopup();
+<br>
+<div class="field"><label class="label">Review</label><br>
+    <textarea class="textarea" placeholder="e.g. It was good."></textarea><br><br>
+ <button>Save</button>`).openPopup();
     // Execute your function with the geocoded information
     generateMapSearch(center, name, properties);
   }).addTo(map);
