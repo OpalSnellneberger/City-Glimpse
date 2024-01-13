@@ -1,5 +1,5 @@
 // controllers/reviewRoutes.js
-const dataModel = require('../models/dataStorage');
+const dataModel = require('../../models/dataStorage');
 
 function storeData(req, res) {
   const { dataToStore } = req.body;
