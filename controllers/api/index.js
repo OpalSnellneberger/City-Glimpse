@@ -1,10 +1,8 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const projectRoutes = require('./projectRoutes');
-const pocketwatchRoutes = require('./pocketWatchRoutes');
+const apiController = require('./reviewRoutes');
 
-router.use('/users', userRoutes);
-router.use('/projects', projectRoutes);
-router.use('/pocketwatchRoutes', pocketwatchRoutes);
+router.use('/review', userRoutes);
+router.post('/storeData', apiController.storeData);
 
 module.exports = router;
