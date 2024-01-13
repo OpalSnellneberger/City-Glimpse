@@ -13,6 +13,9 @@
 
 
     <style>
+        h2 {
+            color: rgb(69, 69, 202);
+        };
         body {
             margin: 0;
             padding: 0;
@@ -57,14 +60,14 @@
     // Create a marker and add it to the map
     const marker = L.marker(center).addTo(map);
     // Bind a popup with the geocoded address information to the marker
-    marker.bindPopup(`<h1><b>${name.split(",")[0]}</b></h1><br><div class="field">
+    marker.bindPopup(`<h2><b>${name.split(",")[0]}</b></h2><br><div class="field">
   <label class="label">Type of Restaurant</label><br>
   <div class="control">
     <input class="input" type="text" placeholder="e.g Italian">
   </div>
 </div>
 <br>
-<div class="field"><label class="label">Comment</label><br>
+<div class="field"><label class="label">Review</label><br>
     <textarea class="textarea" placeholder="e.g. It was good."></textarea><br><br>
  <button>Save</button>`).openPopup();
     // Execute your function with the geocoded information
