@@ -30,6 +30,7 @@ nav a {
 #map {
   height: 400px;
   width: 60%;
+  height: 100vh;
   float: left;
 }
 
@@ -39,3 +40,6 @@ nav a {
   padding: 20px;
 }
 
+h2 {
+  color: rgb(69, 69, 202);
+};
