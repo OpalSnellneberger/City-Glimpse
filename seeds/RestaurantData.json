@@ -4,48 +4,47 @@
     "address": "1237 E Passyunk Ave, Philadelphia, PA 19147",
     "longitude": -75.159233,
     "latitude": 39.933239,
-    "type": "American "
+    "type": "American ",
+    "review": "The cheesesteaks were too big."
   },
   {
     "name": "Geno's Steaks",
     "address": "1219 S 9th St, Philadelphia, PA 19147",
     "longitude": -75.158867,
     "latitude": 39.933239,
-    "type": "American "
+    "type": "American ",
+    "review": "The whiz was delicious."
   },
   {
     "name": "City Tavern",
     "address": "138 S 2nd St, Philadelphia, PA 19106",
     "longitude": -75.144729,
     "latitude": 39.946845,
-    "type": "Historic American"
+    "type": "Historic American",
+    "review": "The burgers are great. Get the bacon burger."
   },
   {
     "name": "Reading Terminal Market",
     "address": "1136 Arch St, Philadelphia, PA 19107",
     "longitude": -75.159038,
     "latitude": 39.953050,
-    "type": "Food Market"
+    "type": "Food Market",
+    "review": "Go to Molly Malloy's for the homemade poptarts."
   },
   {
     "name": "Vedge",
     "address": "1221 Locust St, Philadelphia, PA 19107",
     "longitude": -75.163976,
     "latitude": 39.947586,
-    "type": "Vegetarian"
-  },
-  {
-    "name": "Pat's King of Steaks",
-    "address": "1237 E Passyunk Ave, Philadelphia, PA 19147",
-    "longitude": -75.158675,
-    "latitude": 39.925632,
-    "type": "Cheesesteaks"
+    "type": "Vegetarian",
+    "review": "The rutabaga fondue is my favorite."
   },
   {
     "name": "Zahav",
     "address": "237 St James Pl, Philadelphia, PA 19106",
     "longitude": -75.145836,
     "latitude": 39.946349,
-    "type": "Israeli"
+    "type": "Israeli",
+    "review": "The pita is perfect but hummus was too salty."
   }
 ]

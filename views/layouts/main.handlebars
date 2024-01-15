@@ -16,16 +16,21 @@
 </head>
 <body>
 
-    <header>
-
-        <nav>
-            <h1>City Glimpse</h1>
-            <a role="button" class="fa-solid fa-burger" aria-label="menu" aria-expanded="false">
-              <!-- <span aria-hidden="true">Sign Up</span>
-              <span aria-hidden="true">Login</span>
-              <span aria-hidden="true"></span> -->
-            </a>
-        </nav>
+  <div class="flex-column justify-space-around">
+    <header class="display-flex justify-space-between align-center p-2">
+      <h1>
+        <span role="img" aria-label="burger">🍔</span>
+        <a href="/">City Glimpse</a>
+      </h1>
+      <nav>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/profile">profile</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
 
     </header>
 
