@@ -12,9 +12,23 @@ connection.connect();
 
 
 // TODO: This should actually match the DB for Resteraunts and should have another for comments
-function storeData(dataToStore, callback) {
-  const sql = 'INSERT INTO data (field1, field2) VALUES (?, ?)';
-  const values = [dataToStore.field1, dataToStore.field2];
+function storeRestaurant(dataToStore, callback) {
+  const sql = 'INSERT INTO data (name, adress, longitude, latitude, type) VALUES (?, ?, ?, ?, ?)';
+  const values = [dataToStore.name, dataToStore.adress, dataToStore.longitude, dataToStore.latitude, dataToStore.type];
+
+  connection.query(sql, values, (error, results) => {
+    if (error) {
+      console.error(error);
+      callback(error, null);
+    } else {
+      callback(null, results);
+    }
+  });
+}
+
+function storeComment(dataToStore, callback) {
+  const sql = 'INSERT INTO data (title, content, user_id, resteraunt_id) VALUES (?, ?, ?, ?)';
+  const values = [dataToStore.title, dataToStore.content, dataToStore.user_id, dataToStore.resteraunt_id];
 
   connection.query(sql, values, (error, results) => {
     if (error) {

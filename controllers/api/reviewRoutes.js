@@ -1,10 +1,10 @@
 // controllers/reviewRoutes.js
 const dataModel = require('../../models/dataStorage');
 
-function storeData(req, res) {
+function storeRestaurant(req, res) {
   const { dataToStore } = req.body;
 
-  dataModel.storeData(dataToStore, (error, results) => {
+  dataModel.storeRestaurant(dataToStore, (error, results) => {
     if (error) {
       res.status(500).json({ message: 'Internal Server Error' });
     } else {
