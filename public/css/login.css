@@ -1,0 +1,66 @@
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  background-image: url('../../assets/cityscape.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+ul {
+  font-size: .5rem;
+  list-style-type: disc; /* You can use other values like 'circle', 'square', etc. */
+  margin-left: .2rem; /* Adjust the margin as needed */
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-bottom: .6rem;
+}
+
+h5 {
+  margin: .2rem;
+}
+
+input {
+  margin-bottom: .3rem;
+}
+
+label {
+  font-size: .7rem;
+  margin-bottom: .3rem;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  background-color: rgb(75, 210, 75);
+  padding: .3rem;
+  border-radius: 5px;
+  margin-top: .5rem;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+#login-box,
+#signup-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 3rem .1rem;
+  border-radius: 20px;
+  background-color: rgba(154, 225, 230, 0.83);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.435);
+}
