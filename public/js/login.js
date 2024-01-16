@@ -16,8 +16,8 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
+      // If successful, redirect the browser to the homepage page
+      document.location.replace('/homepage');
     } else {
       alert(response.statusText);
     }
@@ -39,9 +39,9 @@ const signupFormHandler = async (event) => {
       body: JSON.stringify({ name, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
- // If successful, redirect the browser to the profile page
+ // If successful, redirect the browser to the homepage page
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/homepage');
     } else {
       alert(response.statusText);
     }
