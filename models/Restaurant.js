@@ -31,11 +31,12 @@ Restaurant.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // can we do this instead of comment or review model?
-    review: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // // can we do this instead of comment or review model?
+    // // no
+    // review: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
   },
   {
     sequelize,
