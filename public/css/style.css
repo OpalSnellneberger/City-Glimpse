@@ -21,14 +21,13 @@ header {
   background-color:	#f18d00;
   color: #f7f0df;;
   padding: .5rem;
-  text-align: center;
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   color: #f7f0df;
+  max-width: 10%;
 }
 
 nav a {
