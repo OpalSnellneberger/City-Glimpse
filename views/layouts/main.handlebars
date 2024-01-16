@@ -7,57 +7,35 @@
     <!-- Bulma CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <!-- Link to Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" 
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+
     <!-- Your custom styles go here -->
     <script src="https://kit.fontawesome.com/ec9a7f8813.js" crossorigin="anonymous">
     </script>
-
 </head>
 <body>
 
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="burger">🍔</span>
-        <a href="/">City Glimpse</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
+    <header>
+
+        <nav>
+            <h1>City Glimpse</h1>
+            <a role="button" class="fa-solid fa-burger" aria-label="menu" aria-expanded="false">
+              <!-- <span aria-hidden="true">Sign Up</span>
+              <span aria-hidden="true">Login</span>
+              <span aria-hidden="true"></span> -->
+            </a>
+        </nav>
 
     </header>
 
-    <div id="map"></div>
 
-    <div id="comments">
-        <h2>Comments Section</h2>
-        <!-- Add your comment section content here -->
-        <p>Sample comment 1</p>
-        <p>Sample comment 2</p>
-        <!-- You can use JavaScript to dynamically load comments from a server -->
-    </div>
+    {{{body}}}
 
-    <!-- Link to Leaflet JavaScript -->
-
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <!-- Your custom scripts go here, including Leaflet map initialization -->
-    <script>
-
-        // Sample Leaflet map initialization
-        var map = L.map('map').setView([51.505, -0.09], 13);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
-
-    </script>
-
-
+  
 </body>
 </html>
