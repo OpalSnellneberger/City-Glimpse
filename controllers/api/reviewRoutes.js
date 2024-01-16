@@ -14,5 +14,5 @@ function storeRestaurant(req, res) {
 }
 
 module.exports = {
-  storeData,
+  storeRestaurant,
 };
