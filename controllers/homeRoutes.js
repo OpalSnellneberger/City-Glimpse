@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    res.render('start');
+    res.render('landing');
   } catch (err) {
     res.status(500).json(err);
   }
@@ -25,7 +25,7 @@ router.get('/homepage', withAuth, async (req, res) => {
     });
     const savedRestaurants = restaurantData.map((savedRestaurant) => savedRestaurant.get({ plain: true }));
 
-    res.render('homepage', { 
+    res.render('map', { 
       savedRestaurants,
       logged_in: req.session.logged_in 
     });
