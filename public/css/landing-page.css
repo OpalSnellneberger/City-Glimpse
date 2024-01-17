@@ -2,6 +2,18 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  background-image: url('/assets/philly-cityscape.jpg');
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 h3 {
   margin-bottom: .6rem;
 }
@@ -11,10 +23,10 @@ p {
 }
 
 .hero-section {
-  background-image: url('../../assets/philly-cityscape.jpg');
+  /* background-image: url('/assets/philly-cityscape.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   width: 100%;
   height: 80vh;
   display: flex;

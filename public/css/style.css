@@ -2,14 +2,6 @@
   margin: 0;
 }
 
-html {
-  /* background-color: #5e5e60; */
-  background-image: url('../../assets/Philly-background.avif');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -17,24 +9,16 @@ body {
   color: #fff;
 }
 
-header {
-  background-color:	#f18d00;
-  color: #f7f0df;;
-  padding: .5rem;
-  text-align: center;
-}
-
 nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #f7f0df;
+  justify-content: space-evenly;
+  background-color: rgba(224, 224, 224, 0.5);
 }
 
-nav a {
-  color: #f7f0df;
-  text-decoration: none;
-  margin: 0 10px;
+img {
+  max-width: 15%;
+  z-index: 5;
+  margin-top: 10px;
 }
 
 #map {
