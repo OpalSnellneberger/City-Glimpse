@@ -6,8 +6,13 @@ const Review = require('./Review');
 User.hasMany(Review, {
     foreignKey: 'user_id',
 });
+
 User.hasMany(Comment, {
     foreignKey: 'user_id',
+});
+
+User.hasMany(Restaurant, {
+    foreignKey: ''
 });
 
 Restaurant.hasMany(Review, {
