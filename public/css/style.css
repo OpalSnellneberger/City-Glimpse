@@ -22,9 +22,9 @@ img {
 }
 
 #map {
-  height: 400px;
+  /* height: 400px;
   width: 60%;
-  height: 100vh;
+  height: 100vh; */
   float: left;
   border-radius: 20px;
   margin: 20px;
