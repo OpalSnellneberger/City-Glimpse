@@ -13,6 +13,19 @@ function storeRestaurant(req, res) {
   });
 }
 
+
+function storeReview(req, res) {
+  const { dataToStore } = req.body;
+
+  dataModel.storeReview(dataToStore, (error, results) => {
+    if (error) {
+      res.status(500).json({ message: 'Internal Server Error' });
+    } else {
+      res.status(200).json({ message: 'Data stored successfully' });
+    }
+  });
+}
+
 module.exports = {
-  storeRestaurant,
+  storeRestaurant, storeReview
 };
