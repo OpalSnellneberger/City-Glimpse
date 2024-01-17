@@ -15,11 +15,13 @@ router.get('/', async (req, res) => {
 // get all restaurants for homepage on map
 router.get('/homepage', withAuth, async (req, res) => {
   try {
-    const restaurantData = await Restaurant.findAll({
+    const restaurantData = await User.findOne({ 
+      where: {
+       id: req.session.user_id
+      },
       include: [
         {
-          model: User,
-          attributes: ['email'],
+          model: Restaurant,
         }
       ]
     });
@@ -30,6 +32,7 @@ router.get('/homepage', withAuth, async (req, res) => {
       logged_in: req.session.logged_in 
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json({ message: 'internal server error' });
   }
 });
