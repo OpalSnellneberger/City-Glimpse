@@ -29,7 +29,7 @@
     // this function shoud create a post request to save the restaurant data and the review
     const restaurantForm = document.getElementById('restaurant-form');
     restaurantForm.onSubmit = function(f) {
-      console.log(f);
+      fetch('/api/storeRestaurant', {method: 'POST', body: JSON.stringify(restaurant), headers: {'Content-Type': 'application/json'}});
     };
     }).addTo(map);
     // Function to run when an address is geocoded
