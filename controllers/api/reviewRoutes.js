@@ -2,6 +2,7 @@
 const dataModel = require('../../models/dataStorage');
 
 function storeRestaurant(req, res) {
+  console.log(res);
   const { dataToStore } = req.body;
 
   dataModel.storeRestaurant(dataToStore, (error, results) => {

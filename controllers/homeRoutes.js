@@ -17,17 +17,17 @@ router.get('/homepage', async (req, res) => {
       where: {
         // id: req.session.user_id 
         id: 1 // remove later
-      },
-      include: [
-        {
-          model: Restaurant,
-        }
-      ]
+      }
+      // include: [
+      //   {
+      //     model: Restaurant,
+      //   }
+      // ]
     });
-    const savedRestaurants = restaurantData.map((savedRestaurant) => savedRestaurant.get({ plain: true }));
+    // const savedRestaurants = restaurantData.map((savedRestaurant) => savedRestaurant.get({ plain: true }));
 
     res.render('map', { 
-      savedRestaurants,
+      // savedRestaurants,
       logged_in: req.session.logged_in 
     });
   } catch (err) {
