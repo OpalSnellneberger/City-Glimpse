@@ -10,14 +10,13 @@ router.get('/', async (req, res) => {
   }
 });
 
-
-
 // get all restaurants for homepage on map
-router.get('/homepage', withAuth, async (req, res) => {
+router.get('/homepage', async (req, res) => {
   try {
-    const restaurantData = await User.findOne({ 
+    const restaurantData = await User.findOne({
       where: {
-       id: req.session.user_id
+        // id: req.session.user_id 
+        id: 1 // remove later
       },
       include: [
         {
