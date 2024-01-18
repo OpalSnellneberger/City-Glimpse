@@ -22,9 +22,9 @@ Welcome to the City Glimpse, a full-stack web application that empowers users to
 
 ## Demonstration
 
-![City Glimpse Demo]()
+![City Glimpse Demo](./public/assets/City%20Glimpse%20Demo.gif)
 
-[Link to Demonstration video](https://clipchamp.com/watch/ylmHMzLhPQm)
+[Link to Demonstration video](https://clipchamp.com/watch/DSW19XUXR4k)
 
 ## Screenshots
 ### Landing
