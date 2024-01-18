@@ -35,10 +35,10 @@ User.init(
         len: [8],
       },
     },
-    // favorite_restaurants: {
-    //   type: DataTypes.STRING,
-    //   allowNull: true,
-    // },
+    favorite_restaurants: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
     hooks: {

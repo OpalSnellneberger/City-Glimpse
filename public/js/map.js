@@ -56,7 +56,6 @@ const geocoder = L.Control.geocoder({
       if (response.ok) {
         console.log('Restaurant saved successfully');
         console.log('Saved restaurant data:', restaurantData);
-        savedRestaurants.push(restaurantData);
         loadSavedRestaurantsFromServer();
       } else {
         console.error('Error saving restaurant');
@@ -81,6 +80,7 @@ async function loadSavedRestaurantsFromServer() {
   try {
     const response = await fetch('/api/savedRestaurants');
     if (response.ok) {
+      savedRestaurants = [];
       const newSavedRestaurants = await response.json();
       savedRestaurants.push(...newSavedRestaurants); 
       savedRestaurants.forEach((restaurant) => {
