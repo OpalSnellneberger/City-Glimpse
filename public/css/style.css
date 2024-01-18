@@ -1,8 +1,10 @@
+/* universal styling */
 * {
   margin: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/* all pages - backgrounds */
 html {
 height: 100vh;
 background-size: cover;
@@ -14,7 +16,7 @@ padding: 0;
 /* Remove default body padding */
 }
 
-
+/* all pages - backgrounds, text styling */
 body {
   margin: 0;
   padding: 0;
@@ -26,18 +28,21 @@ body {
   color: #fff;
 }
 
+/* all pages nav, logo styling */
 nav {
   display: flex;
   justify-content: space-evenly;
   background-color: rgba(224, 224, 224, 0.5);
 }
 
+/* logo styling */
 img {
   max-width: 15%;
   z-index: 5;
   margin-top: 10px;
 }
 
+/* map styling */
 #map {
   /* height: 400px;
   width: 60%;
@@ -58,20 +63,8 @@ img {
 
 }
 
-#comments {
-  width: 36.5%;
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
-  color: #2f3135;
-  margin: 20px;
-  /* border: 4px solid #c1f3d6; */
-  background-color: rgba(154, 225, 230, 0.83);
-  border-radius: 20px;
-  height: 678px;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.435);
-}
-
+/* login page - Card Headers */
+/* landing page - main text */
 h3 {
   font-size: 30px;
   font-weight: bold;
@@ -82,43 +75,29 @@ h3 {
   margin-bottom: .6rem;
 }
 
-div > p {
-padding-left: 2%;
-}
-
-h2 {
-  color: rgb(69, 69, 202);
-};
-
-ul {
-  font-size: .5rem;
-  list-style-type: disc; /* You can use other values like 'circle', 'square', etc. */
-  margin-left: .2rem; /* Adjust the margin as needed */
-  margin-bottom: 1rem;
-}
-
-h3 {
-  margin-bottom: .6rem;
-}
-
+/* login page - new to city glimpse */
 h5 {
   margin: .2rem;
 }
 
+/* login page - login/sign up inputs */
 input {
   margin-bottom: .3rem;
 }
 
+/* login page - login/sign up input labels */
 label {
   font-size: .7rem;
   margin-bottom: .3rem;
 }
 
+/* login page - full container */
 .container {
   display: flex;
   justify-content: center;
 }
 
+/* landing page - hero container */
 .container-hero {
   width: 100%;
   height: 80vh;
@@ -132,6 +111,7 @@ label {
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.537);
 }
 
+/* login page - login/sign up buttons */
 .btn {
   background-color: rgb(75, 210, 75);
   padding: .3rem;
@@ -139,12 +119,13 @@ label {
   margin-top: .5rem;
 }
 
-
+/* login page - login/sign up forms */
 .form-group {
   display: flex;
   flex-direction: column;
 }
 
+/* login page - containers */
 #login-box,
 #signup-box {
   display: flex;
@@ -158,14 +139,17 @@ label {
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.435);
 }
 
+/* landing page - get started button */
 .buttons-container {
   margin-top: 1.5rem;
 }
 
+/* landing page - text */
 p {
   font-size: .5rem;
 }
 
+/* landing page */
 .hero-section {
   /* background-image: url('/assets/philly-cityscape.jpg');
   background-size: cover;
