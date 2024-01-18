@@ -24,15 +24,15 @@ Welcome to the City Glimpse, a full-stack web application that empowers users to
 
 ![City Glimpse Demo]()
 
-[Link to Demonstration video]()
+[Link to Demonstration video](https://clipchamp.com/watch/ylmHMzLhPQm)
 
 ## Screenshots
 ### Landing
-![Landing]()
+![Landing](./public/assets/LandingPageSS.png)
 ### Login and Signup
-![Login/Signup]()
+![Login/Signup](./public/assets/LoginSignUpSS.png)
 ### Map with Saved Restaurants
-![map]()
+![map](./public/assets/MapSS.png)
 
 ## Usage
 
