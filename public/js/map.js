@@ -55,6 +55,8 @@ const geocoder = L.Control.geocoder({
       });
       if (response.ok) {
         console.log('Restaurant saved successfully');
+        console.log('Saved restaurant data:', restaurantData);
+        savedRestaurants.push(restaurantData);
         loadSavedRestaurantsFromServer();
       } else {
         console.error('Error saving restaurant');
@@ -79,12 +81,14 @@ async function loadSavedRestaurantsFromServer() {
   try {
     const response = await fetch('/api/savedRestaurants');
     if (response.ok) {
-      const savedRestaurants = await response.json();
+      const newSavedRestaurants = await response.json();
+      savedRestaurants.push(...newSavedRestaurants); 
       savedRestaurants.forEach((restaurant) => {
         // Create a marker for each saved restaurant and add it to the map
         const marker = L.marker([restaurant.latitude, restaurant.longitude]).addTo(map);
         marker.bindPopup(`<b>${restaurant.name}</b>`);
       });
+      console.log(savedRestaurants); 
     } else {
       console.error('Error fetching saved restaurants');
     }
@@ -93,7 +97,7 @@ async function loadSavedRestaurantsFromServer() {
   }
 }
 
-// console.log(savedRestaurants)
+console.log(savedRestaurants)
 
 loadSavedRestaurantsFromServer();
 
