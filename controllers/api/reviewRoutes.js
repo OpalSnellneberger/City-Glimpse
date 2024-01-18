@@ -54,10 +54,11 @@ router.get('/savedRestaurants', async (req, res) => {
       where: { id: req.session.user_id }, 
     });
     if (!user) {
+      console.log('User not found');
       return res.status(404).json({ message: 'User not found' });
     }
     let savedRestaurants = [];
-    if (user.favorite_restaurant != null) {
+    if (user.favorite_restaurants != null) {
       const savedRestaurantIDS = (user.favorite_restaurants).split(',');
       for (ID of savedRestaurantIDS) {
         savedRestaurants.push(await Restaurant.findByPk(ID));
