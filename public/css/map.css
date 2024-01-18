@@ -1,25 +1,25 @@
 html {
     background-image: url('../assets/sunset-philly4.webp');
-    height: 100vh;
+    /* height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin: 0;
     /* Remove default body margin */
-    padding: 0;
+    /* padding: 0; */
     /* Remove default body padding */
-}
+} 
 
-#map {
+/* #map {
     height: 75vh;
     width: 60vw; 
-}
+} */
 
-/* Media query for mobile devices */
+/* Media query for mobile devices
 @media screen and (max-width: 767px) {
 
     #map {
       width: 93vw;
     }
 
-  }
+  } */
