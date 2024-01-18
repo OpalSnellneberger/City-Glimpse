@@ -20,9 +20,8 @@ router.post('/storeRestaurant', async (req, res) => {
       name,
       address,
       latitude,
-      longitude,
+      longitude, 
       type,
-      user_id: userId,
     });
     res.status(201).json(newRestaurant); 
   } catch (error) {
@@ -37,12 +36,15 @@ router.get('/savedRestaurants', async (req, res) => {
   try {
     const user = await User.findOne({
       where: { id: req.session.user_id }, 
-      include: [{ model: Restaurant }],
     });
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
-    const savedRestaurants = user.Restaurants || [];
+    savedRestaurantIDS = user.favorite_restaurants.split(',') || [];
+    let savedRestaurants = [];
+    for (ID of savedRestaurantIDS) {
+      savedRestaurants.push(await restaurants.findByPkey(ID));
+    }
     res.status(200).json(savedRestaurants);
   } catch (error) {
     console.error(error);
