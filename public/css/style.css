@@ -1,10 +1,27 @@
 * {
   margin: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+html {
+height: 100vh;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+margin: 0;
+/* Remove default body margin */
+padding: 0;
+/* Remove default body padding */
+}
+
 
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   font-family: Arial, sans-serif;
   color: #fff;
 }
@@ -25,9 +42,29 @@ img {
   /* height: 400px;
   width: 60%;
   height: 100vh; */
+  height: 75vh;
+  width: 60vw; 
   /* float: left;
-  border-radius: 20px;
-  margin: 20px; */
+  border-radius: 20px; */
+  margin: 20px;
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 767px) {
+
+  #map {
+    width: 93vw;
+  }
+
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 767px) {
+
+  #map {
+    width: 93vw;
+  }
+
 }
 
 #comments {
@@ -51,6 +88,7 @@ h3 {
   justify-content: center;
   padding-left: 6%;
   padding-bottom: 5%;
+  margin-bottom: .6rem;
 }
 
 div > p {
@@ -60,3 +98,90 @@ padding-left: 2%;
 h2 {
   color: rgb(69, 69, 202);
 };
+
+ul {
+  font-size: .5rem;
+  list-style-type: disc; /* You can use other values like 'circle', 'square', etc. */
+  margin-left: .2rem; /* Adjust the margin as needed */
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-bottom: .6rem;
+}
+
+h5 {
+  margin: .2rem;
+}
+
+input {
+  margin-bottom: .3rem;
+}
+
+label {
+  font-size: .7rem;
+  margin-bottom: .3rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.container-hero {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(154, 225, 230, 0.716);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.537);
+}
+
+.btn {
+  background-color: rgb(75, 210, 75);
+  padding: .3rem;
+  border-radius: 5px;
+  margin-top: .5rem;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+#login-box,
+#signup-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 3rem .1rem;
+  border-radius: 20px;
+  background-color: rgba(154, 225, 230, 0.83);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.435);
+}
+
+.buttons-container {
+  margin-top: 1.5rem;
+}
+
+p {
+  font-size: .5rem;
+}
+
+.hero-section {
+  /* background-image: url('/assets/philly-cityscape.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
