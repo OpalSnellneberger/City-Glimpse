@@ -23,13 +23,29 @@ router.post('/storeRestaurant', async (req, res) => {
       longitude, 
       type,
     });
+    const newId =  newRestaurant.id;
+    let newFavoriteString;
+    if (user.favorite_restaurants == null) {
+      newFavoriteString = ''+newId;
+    } else  {
+      newFavoriteString = user.favorite_restaurants+','+newId;
+    }
+    await user.update(
+      {
+        favorite_restaurants: newFavoriteString,
+      }
+      );
+
+      console.log(newId);
+      console.log(newFavoriteString);
+      console.log(user.favorite_restaurants);
     res.status(201).json(newRestaurant); 
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal Server Error' });
   }
 });
-
+true,
 
 // fetch saved restaurants for a user
 router.get('/savedRestaurants', async (req, res) => {
@@ -40,10 +56,10 @@ router.get('/savedRestaurants', async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
-    savedRestaurantIDS = user.favorite_restaurants.split(',') || [];
+    savedRestaurantIDS = (user.favorite_restaurants || '1').split(',');
     let savedRestaurants = [];
     for (ID of savedRestaurantIDS) {
-      savedRestaurants.push(await restaurants.findByPkey(ID));
+      savedRestaurants.push(await Restaurant.findByPk(ID));
     }
     res.status(200).json(savedRestaurants);
   } catch (error) {

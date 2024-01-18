@@ -11,9 +11,9 @@ User.hasMany(Comment, {
     foreignKey: 'user_id',
 });
 
-User.hasMany(Restaurant, {
-    foreignKey: ''
-});
+// User.hasMany(Restaurant, {
+//     foreignKey: ''
+// });
 
 Restaurant.hasMany(Review, {
     foreignKey: 'restaurant_id',
