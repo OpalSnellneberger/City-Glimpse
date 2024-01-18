@@ -44,23 +44,10 @@ img {
 
 /* map styling */
 #map {
-  /* height: 400px;
-  width: 60%;
-  height: 100vh; */
-  height: 75vh;
-  width: 60vw; 
-  float: left;
+  height: 77vh;
+  width: 93vw; 
   border-radius: 20px;
   margin: 20px;
-}
-
-/* Media query for mobile devices */
-@media screen and (max-width: 767px) {
-
-  #map {
-    width: 93vw;
-  }
-
 }
 
 /* login page - Card Headers */
@@ -114,7 +101,7 @@ label {
 /* login page - login/sign up buttons */
 .btn {
   background-color: rgb(75, 210, 75);
-  padding: .3rem;
+  padding: 1rem;
   border-radius: 5px;
   margin-top: .5rem;
 }
@@ -159,4 +146,15 @@ p {
   height: 80vh;
   display: flex;
   flex-direction: column;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero-description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
