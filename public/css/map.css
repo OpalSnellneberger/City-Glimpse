@@ -10,16 +10,25 @@ html {
     /* Remove default body padding */
 }
 
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #map {
     height: 75vh;
-    width: 60vw; 
+    width: 94vw; 
+    border-radius: 20px;
+    margin: 20px;
+    align-self: center;
 }
 
 /* Media query for mobile devices */
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
 
     #map {
       width: 93vw;
     }
 
-  }
+  } */
