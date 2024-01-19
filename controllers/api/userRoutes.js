@@ -1,3 +1,4 @@
+// NOTE: TODO's are things to imporve from here rather than necessary components
 const router = require('express').Router();
 const { User } = require('../../models');
 
@@ -20,6 +21,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+// TODO: Handle registration errors diferently when it's user imput thats the error (incorect username or password) or something else 
 // User login route
 router.post('/login', async (req, res) => {
   try {
